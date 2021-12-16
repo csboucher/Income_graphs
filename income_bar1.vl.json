@@ -1,0 +1,31 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "data": { "url": "data/mf_poverty.csv"},
+
+  "mark": "bar",
+  "encoding": {
+    "column": {
+      "field": "date", "type": "nominal","title": "Year",
+      "header": {"orient": "bottom"}
+    },
+    "y": {
+     "field": "percent",
+      "type": "quantitative",
+      "title": "Percent Below Poverty Line",
+      "axis": {"grid": false}
+    },
+    "x": {
+      "field": "gender",
+      "type": "ordinal",
+      "axis": null
+    },
+    "color": {
+      "field": "gender",
+      "scale": {"range": ["#e7ba52", "#1f77b4"]}
+    }
+  },
+  "config": {
+    "view": {"stroke": "transparent"},
+    "axis": {"domainWidth": 1}
+  }
+}

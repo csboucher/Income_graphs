@@ -1,0 +1,18 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": "Average Income in the United States 1967-2020",
+  "description": "Average income from 2020 census data",
+  "data": {"url": "data/total_income.csv"},
+  "width": 600,
+  "height": 400,
+  "mark": {
+    "type": "line",
+    "point": true
+  },
+  "encoding": {
+    "x": {"field": "date","type": "temporal","title": "Years"},
+    "y": {"field": "mean income", "type": "quantitative", "title":"Average Income",
+    "scale": {"zero": false}}
+  }
+}
+

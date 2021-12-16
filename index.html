@@ -1,0 +1,67 @@
+<CTYPE html>
+<head>
+    <meta charset="utf-8">
+    <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-lite@5"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
+
+    <title>Homework 1: Income and Poverty </title>
+</head>
+
+<center>
+<h5>Hypothesis: Both 2008 economic crisis and the Covid-19 pandemic both caused a decrease in average income which
+    correlates to a larger number of people having income below the poverty line.</h5>
+</center>
+    <body>
+
+<div id="vis_time_series"></div>
+
+<table>
+    <thead>
+    <tr>
+        <th colspan="2">Percent of Men and Women Below the Poverty Line 2005-2020</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+        <td><div id="vis_bar_2010"></div></td>
+        <td><div id="vis_bar_2020"></div></td>
+    </tr>
+    </tbody>
+</table>
+
+<div id="vis_bar">
+
+<p style="font-size:8px">
+All data from: <a href="https://www.census.gov/data/tables/2021/demo/income-poverty/p60-273.html">https://www.census.gov/data/tables/2021/demo/income-poverty/p60-273.html</a>
+</p>
+
+
+
+<p style="font-size:8px"><i>
+    This data was found and collected from the United States government from census data spanning from 1967 to
+    2020. The hypothesis was found to be both correct and incorrect. There are decreases in the average income during
+    the 2008 financial crisis but this decrease in income starts in the 2006-2007 year. The Covid-19 pandemic dip in
+    average income is seen at the far left end of the graph from the 2019-2020 year.
+
+    The percentage of people below the poverty line shows the 2008 crisis through large jump in poverty from year
+    2008 to 2009. The percentage of men in poverty increased by approximately 2% more than the women's during this
+    time. The 2020 pandemic didn't cause the same increase in people below the poverty line. Women living below the
+    poverty line increased from the years 2019-2020 but not by as large of a jump in 2008. The male unemployment rate
+    remained constant. These graphs show that there may not be a one-to-one correlation between the trend of
+    average income and the trend of unemployment.</font></p></i>
+
+<script>
+    const spec_time_series = "income_scatter.vl.json";
+    vegaEmbed("#vis_time_series", spec_time_series)
+        .then(result => console.log(result))
+        .catch(console.warn);
+
+    const spec_bar_2010 = "income_bar1.vl.json";
+    vegaEmbed("#vis_bar_2010", spec_bar_2010)
+        .then(result => console.log(result))
+        .catch(console.warn);
+
+</script>
+</body>
+
